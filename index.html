@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact-form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="wrapper">
+        <a href="#"
+          ><img class="logo" src="assets/icons/logo.svg" alt="logo"
+        /></a>
+
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">How it works</a></li>
+        </ul>
+
+        <div class="hamburger">
+          <img class="icon menu-icon" src="assets/icons/menu.svg" alt="menu" />
+          <img
+            class="icon cancel-icon"
+            src="assets/icons/cancel.svg"
+            alt="menu"
+          />
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <form class="wrapper" method="post">
+        <div class="form-header">
+          <h1>Create <span>An</span> account</h1>
+          <p>Don't have an Account?</p>
+        </div>
+        <section>
+          <div class="girl">
+            <img src="/assets/images/girl-rings.svg" alt="girl" />
+          </div>
+          <div class="input-and-btn">
+            <div class="inputs">
+              <input type="text" placeholder="Name" id="name" />
+              <small id="name-error"></small>
+              <input type="number" placeholder="Phone Number" id="phone" />
+              <small id="phone-error"></small>
+              <input type="email" placeholder="Email address" id="email" />
+              <small id="email-error"></small>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                id="password"
+              />
+              <i class="far fa-eye" id="togglePassword"></i>
+            </div>
+            <button type="submit">Register</button>
+            <input type="checkbox" />
+            <p class="terms">
+              By Clicking "Continue" you agree to our <b>Terms of Services</b> &
+              <b>Privacy Policy</b>
+            </p>
+          </div>
+
+          <div class="or-container">
+            <hr width="1" size="100" />
+            <span>or</span>
+            <hr width="1" size="100" />
+          </div>
+
+          <div class="socials">
+            <p>Sign Up with one of your accounts</p>
+            <button type="button">
+              <img src="assets/icons/fb.svg" alt="facebook" />
+              <span>Sign up with facebook</span>
+            </button>
+            <button type="button">
+              <img src="assets/icons/google.svg" alt="google" />
+              <span>Sign up with Google</span>
+            </button>
+          </div>
+          <div class="ring-container">
+            <img src="assets/icons/rings.svg" alt="rings" />
+          </div>
+        </section>
+      </form>
+      <p class="login">
+        Already Have an account? <a href="#"><strong>Log in</strong></a>
+      </p>
+    </main>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>

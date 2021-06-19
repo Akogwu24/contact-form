@@ -55,3 +55,50 @@ phoneInputBar.addEventListener('blur', () => {
 });
 
 //email only Validation
+const emailInputBar = document.getElementById('email');
+emailInputBar.addEventListener('blur', () => {
+  const email = emailInputBar.value.trim();
+  const emailError = document.getElementById('email-error');
+  if (email == '') {
+    emailError.textContent = 'email cannot be empty';
+    emailInputBar.style.borderColor = 'red';
+  } else if (
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    ) === false
+  ) {
+    emailError.textContent = 'please input a valid email';
+    emailInputBar.style.borderColor = 'red';
+  } else {
+    emailError.textContent = '';
+    emailInputBar.style.borderColor = 'green';
+  }
+});
+
+// password validation
+const passwordInputBar = document.getElementById('password');
+passwordInputBar.addEventListener('blur', () => {
+  const passwordInputValue = passwordInputBar.value.trim();
+  const paswordError = document.getElementById('password-error');
+  const passwordInputValueLength = passwordInputValue.length;
+  if (
+    passwordInputValueLength < 6 ||
+    passwordInputValueLength > 15 ||
+    passwordInputValueLength === 0
+  ) {
+    paswordError.textContent = 'password must be between 6 and 15 digits';
+    passwordInputBar.style.borderColor = 'red';
+  } else {
+    paswordError.textContent = '';
+    passwordInputBar.style.borderColor = 'green';
+  }
+  // else if(/^[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(passwordInputValue)===false){
+  //   paswordError.textContent = 'password must contain at least one special character';
+  //   passwordInputBar.style.borderColor='red'
+  // }else{
+  //   paswordError.textContent = '';
+  //   passwordInputBar.style.borderColor='green'
+  // }
+});
+
+//all validations

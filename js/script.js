@@ -3,7 +3,7 @@ const menu = document.querySelector('ul');
 
 hamburger.addEventListener('click', () => {
   menu.classList.toggle('active');
-  console.log('hamburger clicked');
+
   hamburger.classList.toggle('active');
 });
 
@@ -11,8 +11,6 @@ hamburger.addEventListener('click', () => {
 const passwordEye = document.getElementById('togglePassword');
 const password = document.getElementById('password');
 passwordEye.addEventListener('click', () => {
-  // const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-  //same as below
   const currentType =
     password.getAttribute('type') === 'password' ? 'text' : 'password';
   const type = currentType;

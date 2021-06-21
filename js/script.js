@@ -39,6 +39,7 @@ nameInputBar.addEventListener('blur', () => {
 
 //phone only validation
 const phoneInputBar = document.getElementById('phone');
+
 phoneInputBar.addEventListener('blur', () => {
   const phoneInputValue = phoneInputBar.value.trim();
   const phoneError = document.getElementById('phone-error');
@@ -56,6 +57,7 @@ phoneInputBar.addEventListener('blur', () => {
 
 //email only Validation
 const emailInputBar = document.getElementById('email');
+
 emailInputBar.addEventListener('blur', () => {
   const email = emailInputBar.value.trim();
   const emailError = document.getElementById('email-error');
@@ -102,3 +104,49 @@ passwordInputBar.addEventListener('blur', () => {
 });
 
 //all validations
+const registerBtn = document.getElementById('register');
+registerBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const nameInputValue = nameInputBar.value.trim();
+  const nameError = document.getElementById('name-error');
+  const phoneInputValue = phoneInputBar.value.trim();
+  const phoneError = document.getElementById('phone-error');
+  const passwordInputValue = passwordInputBar.value.trim();
+  const paswordError = document.getElementById('password-error');
+  const email = emailInputBar.value.trim();
+  const emailError = document.getElementById('email-error');
+  if (nameInputValue == '') {
+    nameError.textContent = 'you have not entered your name';
+    nameInputBar.style.borderColor = 'red';
+  }
+  if (phoneInputValue == '') {
+    console.log(phoneInputValue);
+    phoneInputBar.style.borderColor = 'red';
+    phoneError.textContent = 'you have noy entered your phoe number';
+  }
+  if (phoneInputValue.length != 11) {
+    phoneInputBar.style.borderColor = 'red';
+    phoneError.textContent = 'phone number must be 11 digits';
+  }
+  if (email == '') {
+    emailInputBar.style.borderColor = 'red';
+    emailError.textContent = 'you have not entered your email';
+  }
+  if (passwordInputValue == '') {
+    paswordError.textContent = 'input a valid password';
+    passwordInputBar.style.borderColor = 'red';
+  }
+  {
+    if (
+      nameError.textContent === '' &&
+      phoneError.textContent === '' &&
+      emailError.textContent === '' &&
+      paswordError.textContent === ''
+    ) {
+      const formHeader = document.querySelector('.form-header h1');
+      formHeader.textContent = 'Registered Successfully';
+      formHeader.style.color = 'green';
+      document.querySelector('.form-header p').textContent = 'enjoy your stay';
+    }
+  }
+});

@@ -30,7 +30,7 @@ li {
 .menu-icon,
 .cancel-icon {
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   position: relative;
 }
 .cancel-icon {
@@ -63,7 +63,7 @@ ul {
   height: 100vh;
   position: absolute;
   top: 0;
-  right: 0;
+  right: -50px;
   width: 100vw;
   display: flex;
   flex-direction: column;
